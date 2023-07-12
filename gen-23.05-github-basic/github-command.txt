@@ -1,0 +1,10 @@
+git clone -> membuat copy(seluruh isi file dalam repository) dari repository yg akan diclone
+git pull -> menarik atau mengambil source code dari repository
+git push ->mengirim perubahan file setelah melakukan commit ke remote repository
+git commit -> untuk menyimpan perubahan yg dilakukan tapi tidak merubah pada remote repository 
+git add -> menambahkan file ke dalam repository yg dipilih
+branch -> adalah pointer(penunjuk) untuk menyimpan suatu perubahan
+Merge -> untuk menggabungkan/menyatukan perubahan dari berbagai branch
+Fork -> menyalin repository org lain ke dalam akun github
+.gitignore -> untuk memisahkan file yg tidak perlu agar tidak ikut ter push
+ 
