@@ -1,0 +1,40 @@
+ .navbar-container{
+    background-color: #FFEFBA;
+    display: flex-end;
+    justify-content: left;
+ }
+ /* Basic styling for the navbar */
+ .navbar {
+    display: flex-end;
+    align-items: center;
+    overflow: hidden;
+  }
+  
+  /* Style the navbar links */
+  .navbar a {
+    float: left;
+    text-align:center;
+    padding: 14px 16px;
+    text-decoration: none;
+    color: black;
+  }
+  
+  /* Change color on hover */
+  .navbar a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  /* Style the home image */
+  .navbar img {
+    height: 50px;
+    vertical-align: middle;
+  }
+
+  .navbar .right-links{
+    float: right;
+  }
+
+  .navbar .right-links a{
+    margin-right: 20px;
+  }
