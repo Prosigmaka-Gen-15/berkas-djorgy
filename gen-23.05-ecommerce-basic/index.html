@@ -13,33 +13,45 @@
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-        <div class="navbar-container">
-            <div class="navbar">
-                <nav>
-                    <a href="#"><img src="images/trolly.jpg"></a>
-                    <a href="#">Catagories</a>
-                    <a href="#">Deals</a>
-                    <a href="#">Whats New</a>
-                    <a href="#">Delivery</a>
-                </nav>
-                <div class="right-links">
-                    <a href="#">Login</a>
-                    <a href="#">Cart</a>
-                </div>
-            </div>
-    
-        </div>
-        
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
+        <ul class="navbar">
+            <li class="nav-item"><a href="#">Home</a></li>
+            <li class="nav-item"><a href="#">Products</a></li>
+            <li class="nav-item"><a href="#">Categories</a></li>
+            <li class="nav-item"><a href="#">Cart</a></li>
+            <li class="nav-item"><a href="#">Contact</a></li>
+            <li class="nav-item search-container">
+                <form>
+                  <input type="text" placeholder="Search">
+                  <button class="search-button" type="submit">Search</button>
+                </form>
+              </li>
+          </ul>
 
-                </div>
+          <div class="product-container">
+            <div class="card">
+              <img class="card-image" src="/images/11Promax.jpg" alt="Product 1 Image">
+              <h2 class="card-title">Iphone 11 Pro Max</h2>
+              <p class="card-price">Rp.6.159.000</p>
+              <p class="card-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <button class="add-to-cart-button">Add to Cart</button>
             </div>
-        </div>        
+            <div class="card">
+              <img class="card-image" src="/images/11Pro.jpg" alt="Product 2 Image">
+              <h2 class="card-title">Iphone 11 Pro</h2>
+              <p class="card-price">Rp.5.500.000</p>
+              <p class="card-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              <button class="add-to-cart-button">Add to Cart</button>
+            </div>
+            <div class="card">
+              <img class="card-image" src="/images/XR.jpg" alt="Product 3 Image">
+              <h2 class="card-title">Iphone XR</h2>
+              <p class="card-price">Rp.5.000.000</p>
+              <p class="card-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              <button class="add-to-cart-button" type="submit">Add to Cart</button>
+            </div>
+          </div>
+
+        
         <script src="" async defer></script>
     </body>
 </html>
