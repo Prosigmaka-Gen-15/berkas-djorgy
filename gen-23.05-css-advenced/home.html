@@ -2,88 +2,117 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!-<![endif]-->
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="styles.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
-    </head>
-    <body>
-      <nav class="navbar">
-        <ul>
-          <li class="navbar-logo">TokoABC</li>
-          <li class="navbar-toggle"><i class="fas fa-bars"></i></li>
-          <li class="navbar-links"><a href="#">Home</a></li>
-          <li class="navbar-links"><a href="#">Product</a></li>
-          <li class="navbar-links"><a href="#">Delivery</a></li>
-          <li class="navbar-links"><a href="#">Cart</a></li>
-        </ul>
-      </nav>
-          <div class="product-container">
-            <div class="card">
-              <img class="card-image" src="/images/11Promax.jpg" alt="Product 1 Image">
-              <h2 class="card-title">Iphone 11 Pro Max</h2>
-              <p class="card-price">Rp.6.159.000</p>
-              <p class="card-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            <button class="add-to-cart-button">Add to Cart</button>
-            </div>
-            <div class="card">
-              <img class="card-image" src="/images/11Pro.jpg" alt="Product 2 Image">
-              <h2 class="card-title">Iphone 11 Pro</h2>
-              <p class="card-price">Rp.5.500.000</p>
-              <p class="card-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-              <button class="add-to-cart-button">Add to Cart</button>
-            </div>
-            <div class="card">
-              <img class="card-image" src="/images/XR.jpg" alt="Product 3 Image">
-              <h2 class="card-title">Iphone XR</h2>
-              <p class="card-price">Rp.5.000.000</p>
-              <p class="card-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-              <button class="add-to-cart-button" type="submit">Add to Cart</button>
-            </div>
-            <div class="card">
-              <img class="card-image" src="/images/XR.jpg" alt="Product 3 Image">
-              <h2 class="card-title">Iphone XR</h2>
-              <p class="card-price">Rp.5.000.000</p>
-              <p class="card-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-              <button class="add-to-cart-button" type="submit">Add to Cart</button>
-            </div>
-            <div class="card">
-              <img class="card-image" src="/images/XR.jpg" alt="Product 3 Image">
-              <h2 class="card-title">Iphone XR</h2>
-              <p class="card-price">Rp.5.000.000</p>
-              <p class="card-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-              <button class="add-to-cart-button" type="submit">Add to Cart</button>
-            </div>
-            <div class="card">
-              <img class="card-image" src="/images/XR.jpg" alt="Product 3 Image">
-              <h2 class="card-title">Iphone XR</h2>
-              <p class="card-price">Rp.5.000.000</p>
-              <p class="card-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-              <button class="add-to-cart-button" type="submit">Add to Cart</button>
-            </div>
-            <div class="card">
-              <img class="card-image" src="/images/XR.jpg" alt="Product 3 Image">
-              <h2 class="card-title">Iphone XR</h2>
-              <p class="card-price">Rp.5.000.000</p>
-              <p class="card-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-              <button class="add-to-cart-button" type="submit">Add to Cart</button>
-            </div>
-            <div class="card">
-              <img class="card-image" src="/images/XR.jpg" alt="Product 3 Image">
-              <h2 class="card-title">Iphone XR</h2>
-              <p class="card-price">Rp.5.000.000</p>
-              <p class="card-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-              <button class="add-to-cart-button" type="submit">Add to Cart</button>
-            </div>
-          </div>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <nav class="navbar">
+      <ul>
+        <li class="navbar-logo">TokoABC</li>
+        <li class="navbar-links" action="check"><a href="#">Home</a></li>
+        <li class="navbar-links"><a href="#">Product</a></li>
+        <li class="navbar-links"><a href="#">Delivery</a></li>
+        <li class="navbar-links"><a href="#">Cart</a></li>
+      </ul>
+      <ul>
+        <li class="navbar-links"><a href="#">Login</a></li>
+        <li class="navbar-links"><a href="#">Register</a></li>
+      </ul>
+      <div class="navbar-toggle">
+        <input type="checkbox" id="check" />
+        <label for="check" class="checkbtn"><i class="fas fa-bars"></i></label>
+      </div>
+    </nav>
+    <div class="product-container">
+      <div class="card">
+        <img
+          class="card-image"
+          src="/images/11Promax.jpg"
+          alt="Product 1 Image"
+        />
+        <h2 class="card-title">Iphone 11 Pro Max</h2>
+        <p class="card-price">Rp.6.159.000</p>
+        <p class="card-description">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        </p>
+        <button class="add-to-cart-button">Add to Cart</button>
+      </div>
+      <div class="card">
+        <img class="card-image" src="/images/11Pro.jpg" alt="Product 2 Image" />
+        <h2 class="card-title">Iphone 11 Pro</h2>
+        <p class="card-price">Rp.5.500.000</p>
+        <p class="card-description">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        </p>
+        <button class="add-to-cart-button">Add to Cart</button>
+      </div>
+      <div class="card">
+        <img class="card-image" src="/images/XR.jpg" alt="Product 3 Image" />
+        <h2 class="card-title">Iphone XR</h2>
+        <p class="card-price">Rp.5.000.000</p>
+        <p class="card-description">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        </p>
+        <button class="add-to-cart-button" type="submit">Add to Cart</button>
+      </div>
+      <div class="card">
+        <img class="card-image" src="/images/XR.jpg" alt="Product 3 Image" />
+        <h2 class="card-title">Iphone XR</h2>
+        <p class="card-price">Rp.5.000.000</p>
+        <p class="card-description">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        </p>
+        <button class="add-to-cart-button" type="submit">Add to Cart</button>
+      </div>
+      <div class="card">
+        <img class="card-image" src="/images/XR.jpg" alt="Product 3 Image" />
+        <h2 class="card-title">Iphone XR</h2>
+        <p class="card-price">Rp.5.000.000</p>
+        <p class="card-description">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        </p>
+        <button class="add-to-cart-button" type="submit">Add to Cart</button>
+      </div>
+      <div class="card">
+        <img class="card-image" src="/images/XR.jpg" alt="Product 3 Image" />
+        <h2 class="card-title">Iphone XR</h2>
+        <p class="card-price">Rp.5.000.000</p>
+        <p class="card-description">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        </p>
+        <button class="add-to-cart-button" type="submit">Add to Cart</button>
+      </div>
+      <div class="card">
+        <img class="card-image" src="/images/XR.jpg" alt="Product 3 Image" />
+        <h2 class="card-title">Iphone XR</h2>
+        <p class="card-price">Rp.5.000.000</p>
+        <p class="card-description">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        </p>
+        <button class="add-to-cart-button" type="submit">Add to Cart</button>
+      </div>
+      <div class="card">
+        <img class="card-image" src="/images/XR.jpg" alt="Product 3 Image" />
+        <h2 class="card-title">Iphone XR</h2>
+        <p class="card-price">Rp.5.000.000</p>
+        <p class="card-description">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        </p>
+        <button class="add-to-cart-button" type="submit">Add to Cart</button>
+      </div>
+    </div>
 
-        
-        <script src="" async defer></script>
-    </body>
+    <script src="" async defer></script>
+  </body>
 </html>
