@@ -6,14 +6,19 @@
     <title>Tailwind Css basic</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="/public/output.css" rel="stylesheet" />
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="output.css" rel="stylesheet" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <body class="bg-green-300">
+  <body class="bg-green-300 font-montserrat">
     <!-- navigation bar -->
     <nav
       class="p-4 bg-white shadow fixed w-full top-0 z-50 md:flex md:items-center md:justify-between"
@@ -25,8 +30,9 @@
           ShoppingKuy</span
         >
       </div>
+
       <!-- menu content tengah -->
-      <ul class="md:flex md:items-center justify-between">
+      <ul class="md:flex md:flex-col md:top md:items-center justify-between">
         <li class="mx-4">
           <a href="#" class="text-xl hover:text-green-600 duration-500">Shop</a>
         </li>
@@ -46,6 +52,7 @@
           >
         </li>
       </ul>
+
       <!-- Menu content right -->
       <ul class="md:flex md:items-center justify-between">
         <li class="mx-4">
@@ -77,11 +84,13 @@
     </nav>
 
     <!-- content container -->
-    <div class="container mx-auto p-6 pb-12 border rounded bg-white mt-24">
+    <div
+      class="container mx-auto p-6 pb-12 border rounded bg-white mt-24 md:flex-col"
+    >
       <div
-        class="flex flex-row justify-between lg:flex-grow gap-4 lg:items-center"
+        class="flex flex-row justify-between lg:flex-grow gap-4 lg:items-center md:flex md:flex-col md:items-center"
       >
-        <div class="flex flex-col gap-6 lg:w-2/4">
+        <div class="flex flex-col gap-6 md:w-2/4">
           <img
             src="/public/images/content1cuy.jpeg"
             alt="jaket bagus"
@@ -90,22 +99,23 @@
           <div class="flex flex-row justify-between h-24">
             <img
               src="/public/images/content2cuy.jpeg"
-              class="w-32 h-32 rounded-md cursor-pointer"
+              class="w-32 h-32 rounded-md cursor-pointer object-cover"
             />
             <img
               src="/public/images/content3cuy.jpeg"
-              class="w-32 h-32 rounded-md cursor-pointer"
+              class="w-32 h-32 rounded-md cursor-pointer object-cover"
             />
             <img
               src="/public/images/content4cuy.jpeg"
-              class="w-32 h-32 rounded-md cursor-pointer"
+              class="w-32 h-32 rounded-md cursor-pointer object-cover"
             />
             <img
               src="/public/images/content5cuy.jpeg"
-              class="w-32 h-32 rounded-md cursor-pointer"
+              class="w-32 h-32 rounded-md cursor-pointer object-cover"
             />
           </div>
         </div>
+
         <!-- item detail -->
         <div class="flex flex-col gap-4 lg:w-2/4">
           <div>
