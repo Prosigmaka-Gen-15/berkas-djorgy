@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Tailwind Css basic</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="output.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <script src="main.js" async defer></script>
+  </head>
+  <body class="bg-green-300 font-montserrat">
+    <!-- navigation bar -->
+    <nav
+      class="p-4 bg-white shadow fixed w-full top-0 z-50 flex items-center justify-between"
+    >
+      <!-- Logo e-commerce -->
+      <div>
+        <span class="text-2xl font-sans">
+          <img class="h-10 inline" src="/public/images/logo22.png" />
+          ShoppingKuy</span
+        >
+      </div>
+
+      <!-- menu content tengah -->
+      <ul class="hidden md:flex flex-row items-center justify-between">
+        <li class="mx-4">
+          <a href="#" class="text-xl hover:text-green-600 duration-500">Shop</a>
+        </li>
+        <li class="mx-4">
+          <a href="#" class="text-xl hover:text-green-600 duration-500"
+            >Most Wanted</a
+          >
+        </li>
+        <li class="mx-4">
+          <a href="#" class="text-xl hover:text-green-600 duration-500"
+            >New Arrivals</a
+          >
+        </li>
+        <li class="mx-4">
+          <a href="#" class="text-xl hover:text-green-600 duration-500"
+            >Brands</a
+          >
+        </li>
+      </ul>
+
+      <!-- Menu content right -->
+      <ul class="hidden md:flex items-center justify-between">
+        <li class="mx-4">
+          <form>
+            <input
+              type="text"
+              placeholder="Search"
+              class="border rounded-lg px-2 py-1 focus:outline-none focus:ring focus:border-blue-300"
+            />
+            <button
+              type="submit"
+              class="ml-2 px-4 py-1 bg-green-300 text-white rounded-lg hover:bg-green-600 focus:outline-none focus:ring focus:bg-blue-600"
+            >
+              <i class="fa fa-search"></i>
+            </button>
+          </form>
+        </li>
+        <li class="mx-4">
+          <a href="#" class="text-xl hover:text-green-200 duration-500"
+            ><i class="fa fa-shopping-bag"></i
+          ></a>
+        </li>
+        <li class="mx-4">
+          <a href="#" class="text-xl hover:text-green-200 duration-500"
+            ><i class="fa fa-user"></i
+          ></a>
+        </li>
+      </ul>
+
+      <a href="" class="block md:hidden text-green-600 text-xl">
+        <i class="fa fa-bars"></i>
+      </a>
+    </nav>
+
+    <!-- content container -->
+    <div class="flex container mx-auto p-6 pb-12 border rounded bg-white mt-24">
+      <div class="gap-4 md:flex md:flex-row">
+        <div class="flex flex-col gap-6 w-2/4" id="main-image">
+          <img
+            src="/public/images/content1cuy.jpeg"
+            alt="jaket bagus"
+            class="w-auto h-50% aspect-square object-cover rounded-xl"
+          />
+          <div class="flex flex-row justify-between h-24" id="image-grid">
+            <img
+              src="/public/images/content1cuy.jpeg"
+              class="w-32 h-32 rounded-md cursor-pointer object-cover"
+            />
+            <img
+              src="/public/images/content3cuy.jpeg"
+              class="w-32 h-32 rounded-md cursor-pointer object-cover"
+            />
+            <img
+              src="/public/images/content4cuy.jpeg"
+              class="w-32 h-32 rounded-md cursor-pointer object-cover"
+            />
+            <img
+              src="/public/images/content5cuy.jpeg"
+              class="w-32 h-32 rounded-md cursor-pointer object-cover"
+            />
+          </div>
+        </div>
+
+        <!-- item detail -->
+        <div class="flex flex-col justify-center py-40 md:w-2/4">
+          <div>
+            <span class="text-green-600 font-semibold"> Best Choice </span>
+            <h1 class="text-3xl font-bold">Jaket Bomber Keren Abiez</h1>
+          </div>
+          <div
+            class="flex items-baseline mt-1 mb-4 pb-4 border-b border-slate-200 lg:w-2/4"
+          >
+            <div class="space-x-2 flex text-sm">
+              <label>
+                <input
+                  class="sr-only peer"
+                  name="size"
+                  type="radio"
+                  value="xs"
+                  checked
+                />
+                <div
+                  class="w-9 h-9 rounded-lg flex items-center justify-center text-slate-700 peer-checked:font-semibold peer-checked:bg-slate-900 peer-checked:text-white"
+                >
+                  XS
+                </div>
+              </label>
+              <label>
+                <input
+                  class="sr-only peer"
+                  name="size"
+                  type="radio"
+                  value="s"
+                />
+                <div
+                  class="w-9 h-9 rounded-lg flex items-center justify-center text-slate-700 peer-checked:font-semibold peer-checked:bg-slate-900 peer-checked:text-white"
+                >
+                  S
+                </div>
+              </label>
+              <label>
+                <input
+                  class="sr-only peer"
+                  name="size"
+                  type="radio"
+                  value="m"
+                />
+                <div
+                  class="w-9 h-9 rounded-lg flex items-center justify-center text-slate-700 peer-checked:font-semibold peer-checked:bg-slate-900 peer-checked:text-white"
+                >
+                  M
+                </div>
+              </label>
+              <label>
+                <input
+                  class="sr-only peer"
+                  name="size"
+                  type="radio"
+                  value="l"
+                />
+                <div
+                  class="w-9 h-9 rounded-lg flex items-center justify-center text-slate-700 peer-checked:font-semibold peer-checked:bg-slate-900 peer-checked:text-white"
+                >
+                  L
+                </div>
+              </label>
+              <label>
+                <input
+                  class="sr-only peer"
+                  name="size"
+                  type="radio"
+                  value="xl"
+                />
+                <div
+                  class="w-9 h-9 rounded-lg flex items-center justify-center text-slate-700 peer-checked:font-semibold peer-checked:bg-slate-900 peer-checked:text-white"
+                >
+                  XL
+                </div>
+              </label>
+            </div>
+          </div>
+          <p class="text-gray-700">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum minus
+            odit ipsa, aspernatur, aliquam perferendis sed provident laborum ad,
+            repellat fugit tempora quia debitis nisi accusamus. Quis harum
+            expedita maxime?
+          </p>
+          <h6 class="text-2xl font-sans">Rp.229.999</h6>
+          <div class="flex flex-row items-center">
+            <button
+              class="bg-green-400 py-2 px-5 rounded-lg text-white text-3xl"
+            >
+              -
+            </button>
+            <span class="py-4 px-6 rounded-lg">1</span>
+            <button
+              class="bg-green-400 py-2 px-5 rounded-lg text-white text-3xl"
+            >
+              +
+            </button>
+          </div>
+          <button
+            class="bg-green-400 text-white font-semibold py-3 px16 rounded-xl h-12"
+          >
+            Add to Cart
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white p-4 text-center mt-44">
+      &copy; 2023 ShoppingKuy. All rights reserved.
+    </footer>
+  </body>
+</html>
