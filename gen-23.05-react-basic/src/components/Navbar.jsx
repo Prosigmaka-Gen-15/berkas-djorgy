@@ -9,10 +9,10 @@ const Navbar = () => {
       <div className="hidden md:flex flex-row items-center gap-4 text-white">
         <a href="#">Most Wanted</a>
         <a href="#">
-          Catagories<i class="fa fa-angle-down"></i>
+          Catagories &nbsp;<i class="fa fa-angle-down"></i>
         </a>
         <a href="#">
-          Brands
+          Brands &nbsp;
           <i class="fa fa-angle-down"></i>
         </a>
         <a href="#">New Arrivals</a>

@@ -5,7 +5,7 @@ const Card = (props) => {
     return new URL(`${name}`, import.meta.url).href;
   }
   return (
-    <div className="flex items-center justify-center w-full h-72 rounded-md px-4 py-4">
+    <div className="flex items-center justify-center w-full h-72 rounded-lg px-4 py-4">
       <div className="bg-white text-gray-700 w-56 min-h-[10rem] shadow-lg rounded-md overflow-hidden">
         <img
           className="w-full h-full object-cover"
@@ -28,6 +28,11 @@ const Card = (props) => {
           </h2>
           <span className="text-xl font-bold">Rp.{props.price}</span>
           <p>{props.desc}</p>
+          <div className="flex items-center">
+            <button className="flex items-center border rounded-lg rounded-4xl px-4 py-1 font-semibold  bg-green-500 text-white transition hover:bg-green-700 ">
+              Add to Cart &nbsp; <i class="fa fa-cart-plus"></i>
+            </button>
+          </div>
         </div>
       </div>
     </div>
