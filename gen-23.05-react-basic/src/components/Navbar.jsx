@@ -6,16 +6,20 @@ const Navbar = () => {
       <div className="text-2xl font-bold text-white">
         <a href="#">ShoppingKuy</a>
       </div>
-      <div className="hidden md:flex flex-row items-center gap-4 text-white">
-        <a href="#">Most Wanted</a>
-        <a href="#">
+      <div className="hidden md:flex flex-row items-center gap-4 text-white ">
+        <a href="#" className="cursor-pointer hover:opacity-50">
+          Most Wanted
+        </a>
+        <a href="#" className="cursor-pointer hover:opacity-50">
           Catagories &nbsp;<i class="fa fa-angle-down"></i>
         </a>
-        <a href="#">
+        <a href="#" className="cursor-pointer hover:opacity-50">
           Brands &nbsp;
           <i class="fa fa-angle-down"></i>
         </a>
-        <a href="#">New Arrivals</a>
+        <a href="#" className="cursor-pointer hover:opacity-50">
+          New Arrivals
+        </a>
       </div>
       <div className="hidden md:flex flex-row items-center gap-4">
         <form>
@@ -31,10 +35,10 @@ const Navbar = () => {
             <i class="fa fa-search"></i>
           </button>
         </form>
-        <a href="#" className="text-white">
+        <a href="#" className="text-white cursor-pointer hover:opacity-50">
           <i class="fa fa-user"></i>
         </a>
-        <a href="#" className="text-white">
+        <a href="#" className="text-white cursor-pointer hover:opacity-50">
           <i class="fa fa-shopping-bag"></i>
         </a>
       </div>
