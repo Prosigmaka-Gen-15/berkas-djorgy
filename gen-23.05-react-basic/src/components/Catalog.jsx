@@ -63,9 +63,9 @@ const Catalog = () => {
   ];
   console.log(data);
   return (
-    <div className="flex flex-col gap-24 px-24">
+    <div className="flex flex-col gap-3 px-24">
       <img src={Banner} alt="banner" />
-      <div className="flex flex-row flex-wrap items-start gap-6">
+      <div className="flex flex-row flex-wrap justify-center gap-4">
         {data.map((item) => (
           <div className="h-full" key={item.id}>
             <Card

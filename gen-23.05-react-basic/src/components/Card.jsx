@@ -5,7 +5,7 @@ const Card = (props) => {
     return new URL(`${name}`, import.meta.url).href;
   }
   return (
-    <div className="flex items-center justify-center w-full h-72 rounded-lg px-4 py-4">
+    <div className="flex items-center justify-center w-full h-72 rounded-lg px-4 py-60">
       <div className="bg-white text-gray-700 w-56 min-h-[10rem] shadow-lg rounded-md overflow-hidden">
         <img
           className="w-full h-full object-cover"
