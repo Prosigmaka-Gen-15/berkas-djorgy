@@ -1,9 +1,11 @@
 import React from "react";
 import Card from "./Card";
 import Banner from "../assets/images/banner-image.jpg";
-import Navbar from "./Navbar";
+import { useNavigate } from "react-router-dom";
 
 const Catalog = () => {
+  const navigate = useNavigate();
+
   const data = [
     {
       id: 1,
@@ -17,7 +19,7 @@ const Catalog = () => {
       nama: "lorem ipsum",
       harga: "100.000",
       desc: "lorem ipsum dolor sit",
-      img: "../assets/images/headphone2.jpg",
+      img: "../assets/images/blueheadphone1.jpg",
     },
     {
       id: 3,

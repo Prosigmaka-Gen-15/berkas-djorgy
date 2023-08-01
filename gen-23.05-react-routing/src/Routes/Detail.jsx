@@ -7,7 +7,7 @@ const Details = () => {
   const data = [
     {
       id: 1,
-      nama: "Sony Headphone 1",
+      nama: "Sony Headphone",
       harga: "1.199.999",
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum minus",
       img1: "../assets/images/headphone1.jpg",
@@ -17,13 +17,13 @@ const Details = () => {
     },
     {
       id: 2,
-      nama: "Sony Heaphone 2",
+      nama: "iClever Bluetooth Headphones",
       harga: "899.999",
       desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum minus",
-      img1: "../assets/images/headphone2.jpg",
-      img2: "../assets/images/headphone3.jpg",
-      img3: "../assets/images/headphone4.jpg",
-      img4: "../assets/images/headphone1.jpg",
+      img1: "../assets/images/blueheadphone1.jpg",
+      img2: "../assets/images/blueheadphone2.jpg",
+      img3: "../assets/images/blueheadphone3.jpg",
+      img4: "../assets/images/blueheadphone4.jpg",
     },
   ];
   return (
