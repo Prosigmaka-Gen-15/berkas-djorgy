@@ -4,7 +4,7 @@ const Navbar = () => {
   return (
     <div className="w-full fixed bg-green-400 flex flex-row content-center justify-between px-4 py-4 shadow top-0 z-50 font-montserrat">
       <div className="text-2xl font-bold text-white">
-        <a href="#">ShoppingKuy</a>
+        <a href="/">ShoppingKuy</a>
       </div>
       <div className="hidden md:flex flex-row items-center gap-4 text-white ">
         <a href="#" className="cursor-pointer hover:opacity-50">

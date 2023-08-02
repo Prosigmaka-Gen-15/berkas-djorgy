@@ -13,8 +13,8 @@ const Card = (props) => {
   }
   return (
     <div
-      className="flex items-center justify-center w-2/3 h-72 rounded-lg px-4 py-60 cursor-pointer"
-      onClick={() => navigate("/detail/1")}
+      className="flex items-center justify-center w-full h-72 rounded-lg border-slate-800 px-4 py-60 cursor-pointer"
+      onClick={() => navigate("/detail/" + props.productId)}
     >
       <div className="bg-white text-gray-700 w-56 min-h-[10rem] shadow-lg rounded-md overflow-hidden">
         <img
@@ -23,7 +23,7 @@ const Card = (props) => {
           alt="image product"
         />
 
-        <div className="flex p-5 flex-col gap-3">
+        <div className="flex p-5 flex-col gap-3 bg-green-200">
           <div className="flex items-center gap-2">
             <span className="px-3 py-1 rounded-full text-xs bg-gray-100">
               stock ready

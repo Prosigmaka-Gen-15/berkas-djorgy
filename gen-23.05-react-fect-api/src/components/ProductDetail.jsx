@@ -1,15 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
-import content1 from "../assets/images/headphone1.jpg";
-import content2 from "../assets/images/headphone2.jpg";
-import content3 from "../assets/images/headphone3.jpg";
-import content4 from "../assets/images/headphone4.jpg";
 
 const ProductDetail = (props) => {
   function getImgUrl(name) {
     return new URL(`${name}`, import.meta.url).href;
   }
-  const [gambarAwal, setGambar] = useState(getImgUrl(props.image1));
+  const [gambarAwal, setGambar] = useState("");
   const [angkaAwal, setAngka] = useState(1);
 
   const decreaseValue = () => {
@@ -24,6 +20,10 @@ const ProductDetail = (props) => {
     setAngka((prev) => prev + 1);
   };
 
+  useEffect(() => {
+    setGambar(getImgUrl(props.image1));
+  }, [props.image1]);
+
   return (
     <div
       className="gap-3 py-12 px-16 flex flex-col md:flex justify-center md:flex-row"
@@ -31,22 +31,22 @@ const ProductDetail = (props) => {
     >
       <div class="flex flex-row justify-between h-10 pl-12 py-12 gap-2 md:flex md:flex-col">
         <img
-          onClick={() => setGambar(content1)}
+          onClick={() => setGambar(getImgUrl(props.image1))}
           src={getImgUrl(props.image1)}
           class="w-24 h-24 rounded-md border cursor-pointer object-cover"
         />
         <img
-          onClick={() => setGambar(content2)}
+          onClick={() => setGambar(getImgUrl(props.image2))}
           src={getImgUrl(props.image2)}
           class="w-24 h-24 rounded-md border cursor-pointer object-cover"
         />
         <img
-          onClick={() => setGambar(content3)}
+          onClick={() => setGambar(getImgUrl(props.image3))}
           src={getImgUrl(props.image3)}
           class="w-24 h-24 rounded-md border cursor-pointer object-cover"
         />
         <img
-          onClick={() => setGambar(content4)}
+          onClick={() => setGambar(getImgUrl(props.image4))}
           src={getImgUrl(props.image4)}
           class="w-24 h-24 rounded-md border cursor-pointer object-cover"
         />

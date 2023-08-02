@@ -19,6 +19,16 @@
       "img2": "../assets/images/blueheadphone2.jpg",
       "img3": "../assets/images/blueheadphone3.jpg",
       "img4": "../assets/images/blueheadphone4.jpg"
+    },
+    {
+      "id": 3,
+      "nama": "Loop Headphones",
+      "harga": "999.999",
+      "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum minus",
+      "img1": "../assets/images/loopheadphone1.jpg",
+      "img2": "../assets/images/loopheadphone1.jpg",
+      "img3": "../assets/images/loopheadphone1.jpg",
+      "img4": "../assets/images/loopheadphone1.jpg"
     }
   ]
 }
