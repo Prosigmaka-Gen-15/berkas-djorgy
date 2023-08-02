@@ -73,7 +73,7 @@ const Catalog = (props) => {
 
     <div className="flex flex-col flex-wrap justify-start gap-4 py-24">
       <Card
-        id={props.id}
+        productId={props.productId}
         name={props.name}
         harga={props.harga}
         desc={props.desc}

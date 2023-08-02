@@ -1,51 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import ProductDetail from "../components/ProductDetail";
 import axios from "axios";
 import { useEffect } from "react";
+import { useParams } from "react-router-dom";
 
 const Details = (props) => {
-  // const data = [
-  //   {
-  //     id: 1,
-  //     nama: "Sony Headphone",
-  //     harga: "1.199.999",
-  //     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum minus",
-  //     img1: "../assets/images/headphone1.jpg",
-  //     img2: "../assets/images/headphone2.jpg",
-  //     img3: "../assets/images/headphone3.jpg",
-  //     img4: "../assets/images/headphone4.jpg",
-  //   },
-  //   {
-  //     id: 2,
-  //     nama: "iClever Bluetooth Headphones",
-  //     harga: "899.999",
-  //     desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum minus",
-  //     img1: "../assets/images/blueheadphone1.jpg",
-  //     img2: "../assets/images/blueheadphone2.jpg",
-  //     img3: "../assets/images/blueheadphone3.jpg",
-  //     img4: "../assets/images/blueheadphone4.jpg",
-  //   },
-  // ];
-  // const getProduct = async () => {
-  //   try {
-  //     let response = await axios.get(" http://localhost:3001/data");
-  //     console.log(response.data);
-  //   } catch (e) {
-  //     console.log(e.message);
-  //   }
-  // };
+  const { detailId } = useParams()
+  const [item, setItem] = useState({})
 
-  // useEffect(() => {
-  //   getProduct();
-  // }),[];
+  const getProduct = async () => {
+    try {
+      let response = await axios.get(" http://localhost:3001/data/" + detailId);
+      setItem(response.data);
+    } catch (e) {
+      console.log(e.message);
+    }
+  };
+
+  useEffect(() => {
+    getProduct();
+  }, []);
 
   return (
     <>
       <Navbar />
-      {data.map((item) => (
-        <div className="h-full" key={item.id}>
+        <div className="h-full">
           <ProductDetail
             name={item.nama}
             price={item.harga}
@@ -56,7 +37,6 @@ const Details = (props) => {
             image4={item.img4}
           />
         </div>
-      ))}
       <Footer />
     </>
   );

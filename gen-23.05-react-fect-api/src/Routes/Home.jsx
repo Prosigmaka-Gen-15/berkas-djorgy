@@ -7,6 +7,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 const Home = () => {
   const [products, setProduct] = useState([]);
+  const [isPopupShow, setisPopupShow] = useState(true);
 
   const getProduct = async () => {
     try {
@@ -19,8 +20,7 @@ const Home = () => {
 
   useEffect(() => {
     getProduct();
-  }),
-    [];
+  }, []);
 
   return (
     <>
@@ -31,6 +31,7 @@ const Home = () => {
       {products.map((product) => (
         <Catalog
           key={product.id}
+          productId={product.id}
           name={product.nama}
           harga={product.harga}
           desc={product.desc}

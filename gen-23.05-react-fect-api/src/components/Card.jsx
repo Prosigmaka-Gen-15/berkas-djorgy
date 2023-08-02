@@ -14,7 +14,7 @@ const Card = (props) => {
   return (
     <div
       className="flex items-center justify-center w-2/3 h-72 rounded-lg px-4 py-60 cursor-pointer"
-      onClick={() => navigate("/detail/1")}
+      onClick={() => navigate("/detail/" + props.productId)}
     >
       <div className="bg-white text-gray-700 w-56 min-h-[10rem] shadow-lg rounded-md overflow-hidden">
         <img

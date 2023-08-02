@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import content1 from "../assets/images/headphone1.jpg";
 import content2 from "../assets/images/headphone2.jpg";
@@ -9,7 +9,7 @@ const ProductDetail = (props) => {
   function getImgUrl(name) {
     return new URL(`${name}`, import.meta.url).href;
   }
-  const [gambarAwal, setGambar] = useState(getImgUrl(props.image1));
+  const [gambarAwal, setGambar] = useState('');
   const [angkaAwal, setAngka] = useState(1);
 
   const decreaseValue = () => {
@@ -23,6 +23,10 @@ const ProductDetail = (props) => {
   const increaseValue = () => {
     setAngka((prev) => prev + 1);
   };
+
+  useEffect(() => {
+    setGambar(getImgUrl(props.image1))
+  }, [props.image1])
 
   return (
     <div
