@@ -1,5 +1,18 @@
 import React from "react";
 import { useState } from "react";
+import { useForm } from "react-hook-form";
+import * as yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
+
+const schema = yup.object().shape({
+  nama: yup.string().required(),
+  harga: yup
+    .number()
+    .positive("harga harus positif")
+    .integer("harga ga boleh koma")
+    .required(),
+  desc: yup.string().required(),
+});
 
 const AdminPage = () => {
   const [isFormOpen, setIsFormOpen] = useState(false);
@@ -8,32 +21,20 @@ const AdminPage = () => {
     setIsFormOpen(!isFormOpen);
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    setIsFormOpen(false);
-  };
-
-  const [formInput, setFormInput] = useState({
-    nama: "",
-    harga: "",
-    desc: "",
-    image: "",
+  const form = useForm({
+    resolver: yupResolver(schema),
   });
 
-  const handleFormInput = (event) => {
-    setFormInput({
-      ...formInput,
-      [event.target.name]: event.target.value,
-    });
-  };
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = form;
 
-  const handleSubmitData = (event) => {
-    const formData = {
-      nama: formInput.nama,
-      harga: formInput.harga,
-      desc: formInput.desc,
-    };
-    console.log("Submitted data:", formData);
+  const onSubmit = (data, event) => {
+    event.preventDefault();
+    console.log(data);
+    setIsFormOpen(false);
   };
 
   return (
@@ -88,47 +89,38 @@ const AdminPage = () => {
             {isFormOpen && (
               <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50">
                 <form
-                  onSubmit={handleSubmit}
-                  className="bg-white p-8 rounded-lg shadow-lg w-2/4 "
+                  className="bg-white p-8 rounded-lg shadow-lg w-2/4"
+                  onSubmit={handleSubmit(onSubmit)}
                 >
                   <h2 className="text-2xl font-bold mb-4">Product Form</h2>
                   <div className="mb-4">
-                    <label htmlFor="name" className="block font-bold mb-1">
-                      Name
-                    </label>
+                    <label className="block font-bold mb-1">Name</label>
+                    {errors.nama?.message}
                     <input
-                      name="nama"
                       type="text"
-                      value={formInput.nama}
-                      onChange={handleFormInput}
+                      id="nama"
+                      {...register("nama")}
                       className="w-full border border-gray-300 p-2 rounded"
-                      required
                     />
                   </div>
                   <div className="mb-4">
-                    <label htmlFor="name" className="block font-bold mb-1">
-                      Price
-                    </label>
+                    <label className="block font-bold mb-1">Price</label>
+                    {errors.harga?.message}
                     <input
-                      name="harga"
                       type="text"
-                      value={formInput.harga}
-                      onChange={handleFormInput}
+                      id="harga"
+                      {...register("harga")}
                       className="w-full border border-gray-300 p-2 rounded"
-                      required
                     />
                   </div>
                   <div className="mb-4">
-                    <label htmlFor="name" className="block font-bold mb-1">
-                      Description
-                    </label>
+                    <label className="block font-bold mb-1">Description</label>
+                    {errors.desc?.message}
                     <input
-                      name="desc"
                       type="text"
-                      value={formInput.desc}
-                      onChange={handleFormInput}
+                      id="desc"
+                      {...register("desc")}
                       className="w-full border border-gray-300 p-2 rounded"
-                      required
                     />
                   </div>
                   {/* <div className="mb-4">
@@ -146,7 +138,6 @@ const AdminPage = () => {
                   </div> */}
                   <button
                     type="submit"
-                    onSubmit={handleSubmitData}
                     className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
                   >
                     Submit
