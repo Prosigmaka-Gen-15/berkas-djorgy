@@ -2,7 +2,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import axios from "axios";
 
@@ -16,8 +16,7 @@ const schema = yup.object().shape({
   desc: yup.string().required(),
 });
 
-export default function FormProduct({ setFormIsOpen }) {
-  const navigate = useNavigate();
+export default function FormProduct({ setFormIsOpen, getProducts }) {
   const form = useForm({
     resolver: yupResolver(schema),
   });
@@ -48,8 +47,8 @@ export default function FormProduct({ setFormIsOpen }) {
         await axios.patch("http://localhost:3001/data/" + productId, data);
       else await axios.post("http://localhost:3001/data", data);
 
-      navigate("/admin");
       setFormIsOpen(false);
+      getProducts();
     } catch (err) {
       alert(err);
       console.log(err);

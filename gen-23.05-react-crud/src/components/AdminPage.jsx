@@ -77,7 +77,12 @@ const AdminPage = () => {
             >
               Add Product &nbsp;<i class="fa fa-plus"></i>
             </button>
-            {isFormOpen && <FormProduct setFormIsOpen={setIsFormOpen} />}
+            {isFormOpen && (
+              <FormProduct
+                setFormIsOpen={setIsFormOpen}
+                getProducts={getProduct}
+              />
+            )}
 
             <table className="table-auto w-full border-collapse border border-slate-500 p-24 ">
               <thead>

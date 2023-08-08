@@ -36,6 +36,13 @@
       "nama": "test",
       "image": {},
       "id": 4
+    },
+    {
+      "desc": "lorem ipsum dolor",
+      "harga": 200000,
+      "nama": "test",
+      "image": {},
+      "id": 5
     }
   ]
 }
