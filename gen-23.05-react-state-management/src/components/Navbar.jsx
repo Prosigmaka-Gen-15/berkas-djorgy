@@ -1,6 +1,9 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="w-full fixed bg-green-400 flex flex-row content-center justify-between px-4 py-4 shadow top-0 z-50 font-montserrat">
       <div className="text-2xl font-bold text-white">
@@ -38,7 +41,11 @@ const Navbar = () => {
         <a href="#" className="text-white cursor-pointer hover:opacity-50">
           <i class="fa fa-user"></i>
         </a>
-        <a href="#" className="text-white cursor-pointer hover:opacity-50">
+        <a
+          href="#"
+          className="text-white cursor-pointer hover:opacity-50"
+          onClick={() => navigate("/cart")}
+        >
           <i class="fa fa-shopping-bag"></i>
         </a>
       </div>

@@ -1,12 +1,15 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
+/* mendefinisikan state awal dari slice yaitu items, 
+status (pending,successful,rejected), dan error handling */
 const initialState = {
   items: [],
   status: null,
   error: null,
 };
 
+//fungsi untuk mengambil data produk dari server endpoint
 export const productsFetch = createAsyncThunk(
   "products/productsFetch",
   async () => {
@@ -15,11 +18,13 @@ export const productsFetch = createAsyncThunk(
   }
 );
 
+//membuat slice dengan nama slice 'products'
 const productSlice = createSlice({
   name: "products",
   initialState,
   reducers: {},
   extraReducers: {
+    //untuk response dari data
     [productsFetch.pending]: (state, action) => {
       state.status = "pending";
     },

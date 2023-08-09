@@ -6,9 +6,6 @@ import { addToCart } from "../features/cartSlice";
 const Card = (product) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  // function logClicked() {
-  //   console.log("Product Clicked");
-  // }
 
   const handleAddtoCart = (product) => {
     dispatch(addToCart(product));
@@ -18,10 +15,9 @@ const Card = (product) => {
     return new URL(`${name}`, import.meta.url).href;
   }
   return (
-    <div className="flex items-center justify-center w-full h-72 rounded-lg border-slate-800 px-4 py-60 cursor-pointer">
+    <div className="flex items-center justify-center w-full h-72 rounded-lg border-slate-800 px-4 py-60">
       <div className="bg-white text-gray-700 w-56 min-h-[10rem] shadow-lg rounded-md overflow-hidden">
         <img
-          onClick={() => navigate("/detail/" + product.productId)}
           className="w-full h-full object-cover"
           src={getImgUrl(product.img1)}
           alt="image product"
@@ -42,7 +38,13 @@ const Card = (product) => {
           </h2>
           <span className="text-xl font-bold">Rp.{product.harga}</span>
           <p>{product.desc}</p>
-          <div className="flex items-center">
+          <div className="flex flex-col items-center gap-1">
+            <button
+              className="flex justify-center w-36 border rounded-lg rounded-4xl px-4 py-1 font-semibold  bg-green-500 text-white transition hover:bg-green-700 "
+              onClick={() => navigate("/detail/" + product.productId)}
+            >
+              Detail &nbsp;
+            </button>
             <button
               className="flex items-center border rounded-lg rounded-4xl px-4 py-1 font-semibold  bg-green-500 text-white transition hover:bg-green-700 "
               onClick={() => handleAddtoCart(product)}
