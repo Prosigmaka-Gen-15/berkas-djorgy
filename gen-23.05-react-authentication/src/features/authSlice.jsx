@@ -2,28 +2,48 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   token: "",
-  user: {},
+  user: {
+    id: "",
+    email: "",
+    username: "",
+  },
 };
+
+function getStoredAuthState() {
+  const storedToken = localStorage.getItem("token");
+  const storedUserString = localStorage.getItem("user");
+  if (storedToken) {
+    return {
+      token: storedToken,
+      user: JSON.parse(storedUserString),
+    };
+  }
+  return { ...initialState };
+}
 
 const authSlice = createSlice({
   name: "user",
-  initialState: { ...initialState },
+  initialState: getStoredAuthState(),
   reducers: {
-    processLogin(state, action) {
-      state.token = action.payload.accessToken;
-      state.user = action.payload.user;
+    setToken(state, action) {
+      const token = action.payload;
+      state.token = token;
+      localStorage.setItem("token", token);
     },
-    processLogout(state) {
-      state.token = "";
-      state.user = {};
+    setUser(state, action) {
+      const { id, email, username } = action.payload;
+      state.user.id = id;
+      state.user.email = email;
+      state.user.username = username;
+      localStorage.setItem("user", JSON.stringify({ id, email, username }));
     },
-    processRegister(state, action) {
-      state.token = action.payload.accessToken;
-      state.user = action.payload.user;
+    resetData() {
+      localStorage.removeItem("token");
+      localStorage.removeItem("user");
+      return { ...initialState };
     },
   },
 });
 
-export const { processLogin, processLogout, processRegister } =
-  authSlice.actions;
+export const { setToken, setUser, resetData } = authSlice.actions;
 export default authSlice.reducer;

@@ -5,12 +5,13 @@ import Card from "../components/Card";
 import Banner from "../assets/images/banner-image.jpg";
 import { useState, useEffect } from "react";
 import axios from "axios";
+
 const Home = () => {
   const [products, setProduct] = useState([]);
 
   const getProduct = async () => {
     try {
-      let response = await axios.get(" http://localhost:3001/data");
+      let response = await axios.get(" http://localhost:3000/data");
       setProduct(response.data);
     } catch (e) {
       console.log(e.message);

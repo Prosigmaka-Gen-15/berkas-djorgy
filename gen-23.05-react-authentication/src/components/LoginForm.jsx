@@ -1,24 +1,49 @@
 import React, { useState } from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-import { processLogin } from "../features/authSlice";
-import { useDispatch, useSelector } from "react-redux";
+import { setUser, setToken } from "../features/authSlice";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { useSelector } from "react-redux";
 
 export default function LoginForm() {
-  const navigate = useNavigate();
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const adminUser = useSelector(
+    (state) => state.auth.email === "admin@admin.com"
+  );
+
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+  });
+
+  const setInputValue = (event) =>
+    setFormData({
+      ...formData,
+      [event.target.name]: event.target.value,
+    });
+
   const handleLoginEvent = (e) => {
     e.preventDefault();
+    console.log(formData);
     axios
-      .post("http://localhost:3000/login", { email, password })
+      .post("http://localhost:3000/login", formData)
       .then((res) => {
-        dispatch(processLogin(res.data));
-        navigate("/admin");
+        const { accessToken, user } = res.data;
+        dispatch(setToken(accessToken));
+        dispatch(setUser(user));
+        if (adminUser === "admin@admin.com") {
+          navigate("/admin");
+        } else {
+          navigate("/home");
+        }
+      })
+      .catch((err) => {
+        alert("Something wrong!");
+        console.log(err);
+        console.log(err.ressponse);
       });
   };
 
@@ -35,9 +60,10 @@ export default function LoginForm() {
               Username
             </label>
             <input
-              type="username"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              type="email"
+              name="email"
+              value={formData.email}
+              onChange={setInputValue}
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               placeholder="Enter your Username"
             />
@@ -48,8 +74,9 @@ export default function LoginForm() {
             </label>
             <input
               type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              name="password"
+              value={formData.password}
+              onChange={setInputValue}
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               placeholder="Enter your password"
             />
